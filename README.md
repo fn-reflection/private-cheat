@@ -1,2 +1,3 @@
 # hello2
-test
+diff
+ブランチ挙動確認
