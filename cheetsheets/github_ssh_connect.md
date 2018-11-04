@@ -29,7 +29,7 @@ Host github.com
 ```
 
 ## ~/.ssh/configファイルのシンボリックリンクを生成してローカルのGitプログラムに読み込ませる
-`mklink "C:\Program Files\Git\etc\ssh\ssh_config" "C:\Users\{{windowsユーザー名}}\.ssh\config"  `
+`mklink "C:\Program Files\Git\etc\ssh\ssh_config" "C:\Users\{{windowsユーザー名}}\.ssh\config"`  
 "C:\Program Files\Git\etc\ssh\ssh_config"が存在する場合は既存のものをリネームする  
 
 ## sshプロトコルによる接続確認
