@@ -28,12 +28,12 @@ Host github.com
   User git  
   Hostname ssh.github.com  
   Port 22  
-  IdentityFile "c:\Users\｛｛ログインユーザー名｝｝\.ssh\id_rsa_github"  
+  IdentityFile "c:\Users\{{windowsユーザー名}}\.ssh\id_rsa_github"  
 ```
 
 ## ~/.ssh/configファイルのシンボリックリンクを生成してローカルのGitプログラムに読み込ませる
 ```console
-mklink "C:\Program Files\Git\etc\ssh\ssh_config" "C:\Users\$user_profile\.ssh\config"  
+mklink "C:\Program Files\Git\etc\ssh\ssh_config" "C:\Users\{{windowsユーザー名}}\.ssh\config"  
 ```
 "C:\Program Files\Git\etc\ssh\ssh_config"が存在する場合は既存のものをリネームする  
 
