@@ -1,15 +1,14 @@
-### void** in cuda
-https://devtalk.nvidia.com/default/topic/418460/-void-amp-d-why-two-/
+## void** in cuda
+https://devtalk.nvidia.com/default/topic/418460/-void-amp-d-why-two-/  
+https://www.slideshare.net/KMC_JP/c-91154309  
+https://www.slideshare.net/KMC_JP/ss-45855264  
+https://www.slideshare.net/KMC_JP/gpgpu-91122680  
 
-https://www.slideshare.net/KMC_JP/c-91154309
-https://www.slideshare.net/KMC_JP/ss-45855264
-https://www.slideshare.net/KMC_JP/gpgpu-91122680
-
-### about cython
-https://nor-isio.hateblo.jp/entry/2018/04/21/145816
-### postgres
+## about cython
+https://nor-isio.hateblo.jp/entry/2018/04/21/145816  
+## postgres
 |desc|code|
-|:||
+|:-|:-|
 |create database |create database japanstock encoding 'UTF-8'; |
 |listing databases|\l|
 |listing users|\du|
@@ -18,7 +17,7 @@ https://nor-isio.hateblo.jp/entry/2018/04/21/145816
 |relate to logging|show log_directory; show logging_collector;show log_destination; show log_statement;|
 ### sqlite
 |||
-|:
+|:-|:-|
 |data types |{NULL,INTEGER,REAL,TEXT,BLOB} | 
 |column types |{[INTEGER,int],[REAL,*{real,floa,doub}*],[TEXT,*#{char,clob,text}*],NUMERIC,[NONE,*blob*]}|
 |query tables | .tables|
@@ -34,7 +33,7 @@ https://nor-isio.hateblo.jp/entry/2018/04/21/145816
 ### powershell vs python
 
 |description| powershell | python |
-|:
+|:-|:-|;-|
 |extension |.ps1 |.py|
 |IDE| powershell_ise|pycharm etc.|
 |help|Get-help func|func? func??|
@@ -90,7 +89,7 @@ sample script
 [css selectors summary](http://saucelabs.com/resources/articles/selenium-tips-css-selectors)
 
 |description| xpath | css |
-|:
+|:-|:-|:-|
 | all element|//* | *|
 | all `<p>` element|//p | p|
 |ID|//div[@id ='pwd']| #pwd |
