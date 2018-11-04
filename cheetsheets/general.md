@@ -15,7 +15,7 @@ https://nor-isio.hateblo.jp/entry/2018/04/21/145816
 |table definition|\d+ tablename|
 |where is data dir|show data_directory;|
 |relate to logging|show log_directory; show logging_collector;show log_destination; show log_statement;|
-### sqlite
+## sqlite
 |||
 |:-|:-|
 |data types |{NULL,INTEGER,REAL,TEXT,BLOB} | 
@@ -30,10 +30,10 @@ https://nor-isio.hateblo.jp/entry/2018/04/21/145816
 |auto increment max rowid| select * from sqlite_sequence|
 |view|create view myview as select ... ,drop view a;|
 |special var|ROWID|
-### powershell vs python
+## powershell vs python
 
 |description| powershell | python |
-|:-|:-|;-|
+|:-|:-|:-|
 |extension |.ps1 |.py|
 |IDE| powershell_ise|pycharm etc.|
 |help|Get-help func|func? func??|
@@ -81,11 +81,11 @@ sample script
 `get-childitem C:\scripts -name > filelist.txt`
 
 ---
-### browser automation
+## browser automation
 [headless chrome summary](http://vaaaaaanquish.hatenablog.com/entry/2017/06/06/194546)
 
 ---
-### CSS XPath
+## CSS XPath
 [css selectors summary](http://saucelabs.com/resources/articles/selenium-tips-css-selectors)
 
 |description| xpath | css |
