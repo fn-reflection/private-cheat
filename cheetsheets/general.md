@@ -109,5 +109,4 @@ sample script
 |match without specifying attribute||a:contains('Log Out')|
 
 `%%prun -s "cumulative"`  
-`makeohlc("*")`  
 `%lprun -f loadcsvpd loadcsvpd(file)`
