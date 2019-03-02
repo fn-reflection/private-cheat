@@ -13,7 +13,10 @@
 パスフレーズはつける[11桁以上が好ましい]
 
 ## 公開鍵の内容をクリップボードに転写[windows]
-`clip < id_rsa_github.pub`
+`clip < id_rsa_github.pub
+## 公開鍵の内容をクリップボードに転写[linux]
+ cat id_rsa.pub | xsel -bi
+
 ## ホスティングサービス(Github)に公開鍵を登録
   https://github.com/settings/keys  
   にて鍵の名前(アクセスする端末名が好ましい)とclipしたデータを登録する
