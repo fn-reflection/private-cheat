@@ -1,1 +1,1 @@
-# My Private Cheetsheets
+# My Private Cheatsheets
