@@ -124,7 +124,7 @@ export DISPLAY=:1.0
 vimでrails_helperを立ち上げ、headlessオプションを一時的にコメントアウトする。
 
 ```sh
-vim paiza/spec/rails_helper.rb
+vim spec/rails_helper.rb
 ```
 
 ```ruby
