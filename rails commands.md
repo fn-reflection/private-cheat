@@ -106,6 +106,7 @@ ssh -p CIRCLECI_PORT CIRCLECI_IPADDRESS -L 5902:localhost:5901
 ```
 
 サーバー側にVNCサーバーとテキストエディタなどをインストールし、VNCサーバーを起動する。
+(他のciプロセスでパッケージインストールとかしていると競合する可能性があるので、変だなと思ったらCIの結果ページをみてください。)
 
 ```sh
 sudo apt update
