@@ -110,3 +110,5 @@ sample script
 
 `%%prun -s "cumulative"`  
 `%lprun -f loadcsvpd loadcsvpd(file)`
+
+```du -a /var | sort -n -r | head -n 10```
