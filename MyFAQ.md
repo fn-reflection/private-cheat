@@ -10,3 +10,8 @@ brew services stop postgresql # 5432を使用していたpostgresを止める。
 ```
 docker system prune # ダングリングなリソースを消し去るらしい
 ```
+
+## clickhouseの起動
+```
+sudo systemctl start clickhouse-server.service
+```
