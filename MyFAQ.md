@@ -11,7 +11,10 @@ brew services stop postgresql # 5432を使用していたpostgresを止める。
 docker system prune # ダングリングなリソースを消し去るらしい
 ```
 
-## clickhouseの起動
+## clickhouse
 ```
-sudo systemctl start clickhouse-server.service
+sudo systemctl start clickhouse-server.service # 起動
+clickhouse-client -m # --multilineモードで起動
+clickhouse-client --query='INSERT INTO table VALUES' < data.txt
+clickhouse-client --query='INSERT INTO table FORMAT TabSeparated' < data.tsv
 ```
