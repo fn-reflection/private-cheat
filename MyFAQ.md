@@ -14,7 +14,9 @@ docker system prune # ダングリングなリソースを消し去るらしい
 ## clickhouse
 ```
 sudo systemctl start clickhouse-server.service # 起動
+clickhouse-server --config-file /etc/clickhouse-server/config.xml # 起動
 clickhouse-client -m # --multilineモードで起動
 clickhouse-client --query='INSERT INTO table VALUES' < data.txt
 clickhouse-client --query='INSERT INTO table FORMAT TabSeparated' < data.tsv
+
 ```
