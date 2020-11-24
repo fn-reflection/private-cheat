@@ -31,3 +31,6 @@ SELECT * from jdbc('jdbc:postgresql://10.10.10.11:5432/m?user= &password= ','pub
     <version>42.2.18</version>
 </dependency>
 ```
+
+## postgresql `でエラー
+mysqlでは`id`など`で挟む記法があるが、postgresでは許可されていないので`をとる。
