@@ -41,3 +41,10 @@ clickhouse-server --config-file /etc/clickhouse-server/config.xml
 java -jar clickhouse-jdbc-bridge-2.0.0-SNAPSHOT.jar
 superset run -h 0.0.0.0 -p 8088 --with-threads --reload --debugger
 ```
+
+## postgres cstore_fdwのインストール (pg_configのディレクトリにパスを通す)
+
+```
+PATH=/usr/bin/:$PATH make
+sudo PATH=/usr/bin/:$PATH make install
+```
