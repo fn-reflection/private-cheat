@@ -20,12 +20,12 @@ package.jsonというファイルをもとに利用するパッケージの名�
 
 他の人の作ったパッケージを利用するだけならdependencies系が特に重要。パッケージを公開する場合はバージョンやライセンスなども重要になる。
 
-```json
+```jsonc
 {
   "name": "my-new-project", // このプロジェクトの名前
   "version": "1.0.0", // このプロジェクトのバージョン
   "description": "説明用", // プロジェクトの説明
-  "main": "index.js", // エントリーポイント、プログラムのスタート地点
+  "main": "index.js", // エントリーポイント
   "repository": { // このプロジェクトが管理されているリポジトリ(例えばgithub)
     "url": "https://example.com/your-username/my-new-project",
     "type": "git"
