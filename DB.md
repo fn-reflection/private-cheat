@@ -1,27 +1,51 @@
 # DB master
 
-|                          | mysql                                 | postgreSQL                              | Elastic search | influx DB                     |
-| ------------------------ | ------------------------------------- | --------------------------------------- | -------------- | ----------------------------- |
-| 前回入力時のエラーの確認 | show errors;                          |                                         |                |                               |
-| 前回入力時の警告の確認   | show warnings;s                       |                                         |                |                               |
-| DBの作成                 | create database DBNAME;               | create database DBNAME;                 |                |                               |
-| DBの作成2                | create database if not exists DBNAME; |                                         |                |                               |
-| DBの作成3                |                                       | create database DBNAME encoding 'utf8'; |                |                               |
-| DBの確認                 | show databases;                       | \l OR select * from pg_database;        |                | show databases;               |
-| ユーザーの確認           | select * from mysql.user              |                                         |                |                               |
-| current DBの選択         | use DBNAME;                           | \c DBNAME;                              |                |                               |
-| テーブル一覧             |                                       | \dt;                                    |                |                               |
-| 実行計画                 | explain QUERY;                        |                                         |                |                               |
-| 設定ファイル             | [/etc/,C:\ProgramData\mysql\\]my.cnf  |                                         |                | `/etc/influxdb/influxdb.conf` |
-| case-sensitive           | lower_case_table_names                |                                         |                |                               |
-| スレッドキャッシュ       | thread_cache_size                     |                                         |                |                               |
-| 最大接続数               | max_connections                       |                                         |                |                               |
-| 通信バッファ(デフォルト) | net_buffer_length                     |                                         |                |                               |
-| 使用CPU数                |                                       |                                         |                | GOMAXPROCS                    |
-| 開発用レポートの停止     |                                       |                                         |                | reporting-disabled=false      |
-|                          |                                       |                                         |                |                               |
-|                          |                                       |                                         |                |                               |
-|                          |                                       |                                         |                |                               |
+主要RDBであるmysqlとpostgresの差異＋主要なNoSQLであるelasticsearch、そして個人的に良いと思っているDWHシステムのclickhouseについてコマンドやコンフィグを比較してみる。(少しずつ埋めていく。)
+
+## コンフィグ
+
+|                                | mysql                                                  | Postgres | elastic search | clickhouse                                                   |
+| ------------------------------ | ------------------------------------------------------ | -------- | -------------- | ------------------------------------------------------------ |
+| 設定ファイルのデフォルトの場所 | linux: /etc/my.cnf<br>win: C:\ProgramData\mysql\my.cnf |          |                | /etc/clickhouse-server.config.xml<br>/etc/clickhouse-server.users.xml |
+| スレッドキャッシュ             | thread_cache_size                                      |          |                |                                                              |
+| 最大接続数                     | max_connections                                        |          |                |                                                              |
+| 通信バッファ                   | net_buffer_length                                      |          |                |                                                              |
+
+## admin
+
+|                  | mysql                                 | postgreSQL                            | Elastic search | Clickhouse      |
+| ---------------- | ------------------------------------- | ------------------------------------- | -------------- | --------------- |
+| DBの作成         | create database if not exists DBNAME; | create database if not exists DBNAME; |                |                 |
+| DBの確認         | show databases;                       | \l OR select * from pg_database;      |                | show databases; |
+| ユーザーの確認   | select * from mysql.user              |                                       |                |                 |
+| current DBの選択 | use DBNAME;                           | \c DBNAME;                            |                |                 |
+| テーブル一覧     |                                       | \dt;                                  |                |                 |
+
+## DDL, DML
+
+|          | mysql   | postgreSQL                 | Elastic search | Clickhouse |
+| -------- | ------- | -------------------------- | -------------- | ---------- |
+| 実行計画 | explain | explain<br>explain analyze |                | Explain    |
+
+## function
+
+|                                                     | mysql | postgreSQL                           | Clickhouse                          | elastic search |
+| --------------------------------------------------- | ----- | ------------------------------------ | ----------------------------------- | -------------- |
+| キャスト                                            |       |                                      | CAST(p AS String)                   |                |
+| 平均                                                |       | avg(value)                           | avg(value)                          |                |
+| 最大・最小                                          |       | max,min(value)                       |                                     |                |
+| 標準偏差[標本標準偏差]                              |       |                                      | stdpop\[stdSamp\]                   |                |
+| ピアソンの相関係数[安定計算]                        |       |                                      | corr\[corrStable\](x,y)             |                |
+| 現在のtimestamp                                     |       | current_timestamp                    | now()                               |                |
+| 現在のtimestamp(utc)                                |       | current_timestamp AT TIME ZONE 'etc' | now('UTC')                          |                |
+| 3時間を表す                                         |       | interval '3 hours'                   | interval '3 hours'                  |                |
+| 分単位へのダウンサンプリング                        |       | date_trunc('minute', time)           | toStartOfMinute(time)               |                |
+| datetimeから月を抽出する                            |       | EXTRACT(MONTH FROM time)             | EXTRACT(MONTH FROM time)            |                |
+| GROUP BYした結果を(SORTして)最初[最後]のvalueをとる |       |                                      | argMin\[argMax\](value, sortColumn) |                |
+
+
+
+
 
 ## EXPLAIN
 
@@ -56,4 +80,12 @@
 | Using filesort                   | クイックソートを実行している(ので遅い)                       |
 | Using temporary                  | クエリにテンポラリテーブルが必要(なので遅い)                 |
 |                                  |                                                              |
+
+
+
+### postgres
+
+| description | meaning |
+| ----------- | ------- |
+|             |         |
 
