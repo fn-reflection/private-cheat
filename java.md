@@ -156,3 +156,20 @@ rc #リソースファイル(コンフィグファイルとか)をおく
 </project>
 ```
 
+## vscodeの設定
+
+extension packは重すぎなので、redhatのやつだけ使う。
+
+```json
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.dependency.syncWithFolderExplorer": true,
+    "java.format.enabled": true,
+    "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+    "java.format.settings.profile": "GoogleStyle",
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    }
+}
+```
+
