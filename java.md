@@ -15,6 +15,15 @@ META-INF/MANIFEST.MF # マニフェストファイル jarアーカイブのメ�
 .jar # jarファイル zip形式でマニフェストファイルと複数のクラスファイルを持つ
 ```
 
+## java_home
+
+インストールされているjavaのバージョンを列挙する。(rbenvみたいなもの)
+
+```sh
+/usr/libexec/java_home -V # mac
+archlinux-java status # archlinux
+```
+
 ## java
 
 mavenで.jarを作って、java -jar x.jar を使えばいい。本当はX optionも必要だけど省略
