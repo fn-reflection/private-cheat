@@ -50,3 +50,8 @@ cd cstore_fdw
 PATH=/usr/bin/:$PATH make
 sudo PATH=/usr/bin/:$PATH make install
 ```
+
+## livLLVM.soがない
+```
+sudo pacman -S llvm10-libs
+```
