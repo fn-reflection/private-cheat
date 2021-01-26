@@ -81,6 +81,8 @@
 | Using temporary                  | クエリにテンポラリテーブルが必要(なので遅い)                 |
 |                                  |                                                              |
 
+### mysqlの無停止可能なコマンドについて
+https://dev.mysql.com/doc/refman/5.6/ja/innodb-create-index-overview.html
 
 
 ### postgres
