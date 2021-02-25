@@ -16,6 +16,8 @@
 
 [async book](https://async-book-ja.netlify.app/01_getting_started/01_chapter.html]) (非同期)
 
+[macro book](https://danielkeep.github.io/tlborm/book/README.html) (マクロ)
+
 ## 学習リソース2
 
 https://qiita.com/k5n/items/758111b12740600cc58f
