@@ -16,6 +16,16 @@
 
 [async book](https://async-book-ja.netlify.app/01_getting_started/01_chapter.html]) (非同期)
 
+## 学習リソース2
+
+https://qiita.com/k5n/items/758111b12740600cc58f
+
+https://qiita.com/nirasan/items/cf05ac6d5a1ae17ae36f
+
+
+
+
+
 
 
 rustupの基本設定
@@ -202,4 +212,33 @@ let a = match val {
 - 実行ランタイムが必要
 - OSのプリエンプションがないのでコンテキストスイッチが安価
 - blockingな処理はランタイム全体のパフォーマンスを下げるので、例えばtokioではblocking_spawn!を使い明示的にブロッキングスレッド送りにする。async_stdだと検出機能がランタイムに入っている。
+
+## rust macrobookの簡略化
+
+fibonacciの実装が必要以上にゴテゴテしてるので削り取る
+
+```
+use std::mem::swap;
+#[derive(Debug)]
+struct Recurrence { mem: [u64; 2], pos: usize }
+impl Iterator for Recurrence {
+    type Item = u64;
+    fn next(&mut self) -> Option<u64> {
+        if self.pos < 2 {
+            let next = self.mem[self.pos];
+            self.pos += 1;
+            Some(next)
+        } else {
+            let next_val = &self.mem[1] + &self.mem[0];
+            let mut swap_tmp = next_val;
+            for i in (0..2).rev() { swap(&mut swap_tmp, &mut self.mem[i]); }
+            Some(next_val)
+        }
+    }
+}
+fn main() {
+    let fib = Recurrence { mem: [0, 1], pos: 0 };
+    for e in fib.take(10) { println!("{}", e) }
+}
+```
 

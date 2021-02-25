@@ -29,19 +29,19 @@
 
 ## function
 
-|                                                     | mysql | postgreSQL                           | Clickhouse                          | elastic search |
-| --------------------------------------------------- | ----- | ------------------------------------ | ----------------------------------- | -------------- |
-| キャスト                                            |       |                                      | CAST(p AS String)                   |                |
-| 平均                                                |       | avg(value)                           | avg(value)                          |                |
-| 最大・最小                                          |       | max,min(value)                       |                                     |                |
-| 標準偏差[標本標準偏差]                              |       |                                      | stdpop\[stdSamp\]                   |                |
-| ピアソンの相関係数[安定計算]                        |       |                                      | corr\[corrStable\](x,y)             |                |
-| 現在のtimestamp                                     |       | current_timestamp                    | now()                               |                |
-| 現在のtimestamp(utc)                                |       | current_timestamp AT TIME ZONE 'etc' | now('UTC')                          |                |
-| 3時間を表す                                         |       | interval '3 hours'                   | interval '3 hours'                  |                |
-| 分単位へのダウンサンプリング                        |       | date_trunc('minute', time)           | toStartOfMinute(time)               |                |
-| datetimeから月を抽出する                            |       | EXTRACT(MONTH FROM time)             | EXTRACT(MONTH FROM time)            |                |
-| GROUP BYした結果を(SORTして)最初[最後]のvalueをとる |       |                                      | argMin\[argMax\](value, sortColumn) |                |
+|                                                     | mysql | postgreSQL                 | Clickhouse                          | elastic search |
+| --------------------------------------------------- | ----- | -------------------------- | ----------------------------------- | -------------- |
+| キャスト                                            |       |                            | CAST(p AS String)                   |                |
+| 平均                                                |       | avg(value)                 | avg(value)                          |                |
+| 最大・最小                                          |       | max,min(value)             |                                     |                |
+| 標準偏差[標本標準偏差]                              |       |                            | stdpop\[stdSamp\]                   |                |
+| ピアソンの相関係数[安定計算]                        |       |                            | corr\[corrStable\](x,y)             |                |
+| 現在のtimestamp                                     |       | now()                      | now()                               |                |
+| 現在のtimestamp(utc)                                |       | now() AT TIME ZONE 'etc'   | now('UTC')                          |                |
+| 3時間を表す                                         |       | interval '3 hours'         | interval '3 hours'                  |                |
+| 分単位へのダウンサンプリング                        |       | date_trunc('minute', time) | toStartOfMinute(time)               |                |
+| datetimeから月を抽出する                            |       | EXTRACT(MONTH FROM time)   | EXTRACT(MONTH FROM time)            |                |
+| GROUP BYした結果を(SORTして)最初[最後]のvalueをとる |       |                            | argMin\[argMax\](value, sortColumn) |                |
 
 
 
