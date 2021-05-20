@@ -59,3 +59,10 @@ sudo pacman -S llvm10-libs
 ## superset(docker)からhost側のpostgresqlにアクセスできない。
 結論 pg_hba.confの許可が不足していた。**172**.0.0.1/8あたりのipを許可しないといけない。127ではない。
 (セキュアにするにはdockerのIP固定化などで許可するIPを絞り込む。)
+
+## vscodeのremote sshがうまく接続できない。
+サーバ側で
+```
+ps aux | grep vscode
+```
+して引っかかるプロセスをキルする
