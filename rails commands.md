@@ -17,6 +17,12 @@
 | DBシードの読み込み                          | bundle exec rails db:seeds                                   |
 | デバッガーを仕込む                          | binding.pry                                                  |
 |                                             |                                                              |
+## bundler gemのソースファイルの在処
+```
+/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems # 外部ライブラリの実装調査に
+```
+
+
 ## feature spec関連
 
 - featurespecのシンタックスシュガー：feature=describe, scenario=it, given[!]=let[!], background=before
