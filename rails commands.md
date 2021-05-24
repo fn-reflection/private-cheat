@@ -21,7 +21,10 @@
 ```
 /.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems # 外部ライブラリの実装調査に
 ```
-
+## scsｓのフォーマット
+```
+npx stylelint --fix app/assets/stylesheets/common/color.scss
+```
 
 ## feature spec関連
 
