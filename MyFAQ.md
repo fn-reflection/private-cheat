@@ -66,6 +66,8 @@ docker-compose down -v --remove-orphans
 docker-compose -f docker-compose-non-dev.yml  up --force-recreate --build
 ```
 
+## superset(docker compose)で毎回DBリセットがかかる。
+docker-compose.ymlのsuperset-initコンテナを立ち上げない。
 
 ## vscodeのremote sshがうまく接続できない。
 サーバ側で
