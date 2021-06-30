@@ -60,6 +60,13 @@ sudo pacman -S llvm10-libs
 結論 pg_hba.confの許可が不足していた。**172**.0.0.1/8あたりのipを許可しないといけない。127ではない。
 (セキュアにするにはdockerのIP固定化などで許可するIPを絞り込む。)
 
+## superset(docker compose)でうまく動かない。
+```
+docker-compose down -v --remove-orphans 
+docker-compose -f docker-compose-non-dev.yml  up --force-recreate --build
+```
+
+
 ## vscodeのremote sshがうまく接続できない。
 サーバ側で
 ```
